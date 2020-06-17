@@ -1,21 +1,32 @@
-{%    extends "base.html"  %}
+<html>
+<head>
+    <title> Register </title>
+    <link rel="stylesheet" type="text/css" href="/static/css/register.css">
+</head>
+    <body>
+    <div class="register-box">
+    <img src="/static/images/reg-avatar.jpg" class="avatar">
+        <h1>Register Here</h1>
+        <form  method="post">
+          {{form.hidden_tag()}}
+          <p>{{form.email.label}}</p>
+          {{form.email}}
 
-{%  block content %}
-<div class="jambotron">
-<form  method="post">
-  {{form.hidden_tag()}}
-  {{form.email.label}}{{form.email}}
-  <br>
-  {{form.username.label}}{{form.username}}
-  <br>
-  {{form.password.label}}{{form.password}}
-  <br>
-  {{form.cnf_pass.label}}{{form.cnf_pass}}
-  <br>
-  {{form.submit()}}
+          <p>{{form.username.label}}</p>
+          {{form.username}}
 
-</form>
+          <p>{{form.password.label}}</p>
+          {{form.password}}
 
-</div>
+          <p>{{form.cnf_pass.label}}</p>
+          {{form.cnf_pass}}
 
-{%  endblock   %}
+          {{form.submit()}}
+
+        </form>
+
+
+        </div>
+
+    </body>
+</html>
