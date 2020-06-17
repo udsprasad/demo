@@ -8,7 +8,7 @@ from project.models import User
 class Loginform(FlaskForm):
 
       email=StringField("Email:",validators=[DataRequired(),Email()])
-      password=PasswordField("Password",validators=[DataRequired()])
+      password=PasswordField("Password:",validators=[DataRequired()])
       submit=SubmitField("Log in")
 
 
@@ -19,8 +19,8 @@ class Registerform(FlaskForm):
 
    email=StringField("Email:",validators=[DataRequired(),Email()])
    username=StringField("Username:",validators=[DataRequired()])
-   password=PasswordField("Password",validators=[DataRequired(),EqualTo('cnf_pass',message="Password must match!")])
-   cnf_pass=PasswordField("Confirm Password",validators=[DataRequired()])
+   password=PasswordField("Password:",validators=[DataRequired(),EqualTo('cnf_pass',message="Password must match!")])
+   cnf_pass=PasswordField("Confirm Password:",validators=[DataRequired()])
    submit=SubmitField("Register!")
 
    def validate_email(self,email):
